@@ -6,13 +6,16 @@ var map = {};
 	var map_canvas = document.getElementById('map-canvas');
 	if (!map_canvas) return console.warn('Map error - canvas element not found.');
 	
+  // old center of map, was causing issues with displaying certain offices
+	//new google.maps.LatLng(52.02714857444259, -88.8589346408844)
 	map = new google.maps.Map(map_canvas, {
-		zoom: 4,
-		center: new google.maps.LatLng(52.02714857444259, -88.8589346408844),
-        mapTypeControl: false,
-        navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL },
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+		zoom: 11,
+		center: new google.maps.LatLng(43.65322600000002, -79.38318429999997),
+		mapTypeControl: false,
+		navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL },
+		mapTypeId: google.maps.MapTypeId.ROADMAP
 	});
+	
 	
 	map.markers = [];
 	map.clusterer = {};
@@ -38,16 +41,47 @@ var map = {};
 					'<p class="details-link"><a href="http://maps.apple.com/?q=' + encodeURIComponent(this.address) + '+' +  encodeURIComponent(this.city) + '+' + encodeURIComponent(this.province) + '&t=m&z=11" target="_blank">' + this.address + 
 					'<br/>' + this.city + ', ' + this.province + '<br>' + this.postalcode + '</a> <a href="tel:' + this.phone +'">' + this.phone +'</a></p>' +
 				'</div>',
+        
+        
+        
 			}));
+      
+      /*EXPERIMENTING*/
+			google.maps.event.addListener(map.markers[i],'click', function(){
+
+				map.setZoom(14);
+				map.setCenter(map.markers[i].getPosition());
+
+			});
+			/*END*/
 		});
 		
 		map.clusterer = new MarkerClusterer(map, map.markers, {
-			maxZoom: 9,
-			gridSize: 40
+			maxZoom: 11,
+			gridSize: 40,
+      imagePath: '../../wp-content/themes/sunset/img/__pushpin.png'
 		});
 		
 	};
-	
+
+	var get_location_at_start = function(){
+		if ('geolocation' in navigator)
+			navigator.geolocation.getCurrentPosition(function(position) {
+				map.setZoom(11);
+				map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+
+			}, function(error){
+
+				console.log(error);
+				var tLat = 43.65322600000002;
+				var tLon =-79.38318429999997;
+				map.setZoom(11);
+				map.panTo(new google.maps.LatLng(tLat,tLon));
+
+			});
+
+		else alert("Geolocation not supported.");
+	};
 	var reset_locations = function() {
 		var locations = d.querySelectorAll('[data-module="locations"]');
 		if (locations.length) $(locations).moduleLocations();
@@ -57,6 +91,8 @@ var map = {};
 	google.maps.event.addListener(map, 'idle', reset_locations, false);
 	
 	$.fn.moduleStoreSearch = function(OPTIONS) {
+
+		get_location_at_start();
 		if (Object(OPTIONS) !== OPTIONS) OPTIONS = {};
 		
 		var EVENT = {
@@ -107,19 +143,10 @@ var map = {};
 				
 				$(gps).unbind(EVENT.CLICK).bind(EVENT.CLICK, function(e) {
 					e.preventDefault();
-					if ('geolocation' in navigator)
-						navigator.geolocation.getCurrentPosition(function(position) {
-							map.setZoom(11);
-							map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-						});
-					else alert("Geolocation not supported.");
+					get_location_at_start();
 
 
-				},
-				 function(error){
-				 	console.log('no geolocation\n' + 'Error Code:' + error.code + '\n Error Message' + error.message);
-				 }
-				);
+				});
 
 				if ('location_search' == window.location.hash.replace('#', '')) $(gps).trigger(EVENT.CLICK);
 			
@@ -173,9 +200,12 @@ var map = {};
 	};
 	
 	$(function() {
+
+
 		reset_markers();
 		reset_locations();
-		
+
+
 		var store_search = d.querySelectorAll('[data-module="store_search"]');
 		if (store_search.length) $(store_search).moduleStoreSearch();
 		store_search = null;
@@ -183,6 +213,8 @@ var map = {};
 	
 })(window.jQuery, document);
 
+
 $(document).ready(function(){
+
 	$('.btn.btn-rev.gps-btn').trigger('click');
 });

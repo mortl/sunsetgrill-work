@@ -27,7 +27,7 @@
 
 
 	</head>
-	<body <?php body_class(); ?> ng-app="MainApp">
+	<body <?php body_class('ng-cloak'); ?> ng-app="MainApp">
     <!--<div class="devices">
         <div class="phone">Phone</div>
         <div class="tablet">Tablet</div>

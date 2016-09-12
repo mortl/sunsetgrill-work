@@ -1,8 +1,8 @@
 <?php
 
 function render_timeline() {
-  // $items = getCustomPosts('milestone', null, null, 'timeline_date', 'ASC');
-  $items = getCustomPosts('milestone', null, null, 'post_title', 'ASC');
+   //$items = getCustomPosts('milestone', null, null, 'timeline_date', 'ASC');
+  $items = getCustomPosts('milestone', null, null, 'post_title');
   //echo "<pre>";
   //print_r($items);
   //echo "</pre>";

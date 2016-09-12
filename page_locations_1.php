@@ -4,7 +4,7 @@ Template Name: Locations Page 1
 */
 ?>
 <?php get_header(); ?>
-	<div class="main addPadding" ng-app="currentLocationsApp">
+	<div class="main addPadding" ng-cloak ng-app="currentLocationsApp">
 		<main role="main">
 
 		
@@ -299,9 +299,9 @@ echo "</select>";
 							<a class="phone" ng-bind-html="result.phone" ng-show="result.phone != null" title="Call {{result.city}} {{result.location}} location" href="tel:{{result.phone}}">{{result.phone}}</a>
 						</div>
 						<p class="hours" ng-bind-html="trimMarkup(result.hours)" ng-show="result.hours != null">{{result.hours}}</p>
-						<ul class="features">
+						<!--<ul class="features">
 							<li ng-repeat="feature in result.features" class="feature-icon" ng-class="getFeatureClass(feature)" title="{{getFeatureClass2(feature)}}" ng-style="getFeatureIconStyle(feature);" ></li>
-						</ul>						
+						</ul>	-->
 					</div>
 
 				</div>

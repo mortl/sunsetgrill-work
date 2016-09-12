@@ -3,7 +3,7 @@
 var app = angular
 .module('MainApp')
 
-.controller('searchController', function($scope) {
+.controller('searchController', function($scope, $log) {
   $scope.searchResults = [];
   $scope.locations = [];
   if (window.location_data) {
@@ -18,6 +18,7 @@ var app = angular
       cityHash[location.city] = 1;
     }
     cityHash[location.city]++;
+   
   }
 
   $scope.cities = [];
