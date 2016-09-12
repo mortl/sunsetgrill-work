@@ -1,0 +1,71 @@
+.hidden {
+  display: none!important;
+}
+
+@mixin CentringMargins() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin SetMargins($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin SetPadding($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin SetPaddingV($value) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+
+@mixin AutosizeToContent() {
+  width: 1px;
+  white-space:nowrap;
+}
+
+@mixin ImageButton($url, $width, $height) {
+  background-color:transparent;
+  border:none;
+  outline:none;
+  background-repeat:no-repeat;
+  background-image:url($url); 
+  width:$width;
+  height:$height;
+  padding:0;
+  background-size: $width $height;
+}
+
+@mixin BackgroundImage($url, $width, $height) {
+  background-repeat:no-repeat;
+  background-image:url($url);
+  background-size: $width $height;
+  width:$width;
+  height:$height;
+}
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+}

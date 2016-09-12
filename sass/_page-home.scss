@@ -1,0 +1,350 @@
+.page-template-page_home {
+
+  .plateContainer {
+    position: absolute;
+    width: 100%;
+    max-width: 1600px;
+    top: 370px;
+    z-index: 10; 
+    // pointer-events:none;   
+  }
+	.home_block_title {
+		display: block;
+		position: absolute;
+		z-index: 2;
+		width: 80%;
+		top: 0;
+		font-weight: bold;
+		max-width: 940px;
+		line-height: 5em;
+		background-color: #fff;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		border-radius: 20px 20px 0 0;
+		-moz-border-radius: 20px 20px 0 0;
+		-ms-border-radius: 20px 20px 0 0;
+		-webkit-border-radius: 20px 20px 0 0;
+		-o-border-radius: 20px 20px 0 0;
+	}
+	#home_modules {
+		position: relative;
+		h3 {
+			font-weight: 100 !important;	
+		}
+		.module_1 {
+			.module_content {
+				top: 0;
+				padding: 10em 4em 10em;
+				height: calc(100% - 20em);
+			}
+		}
+		.module_2 {
+			.module_content {
+				padding: 5em 4em 10em;
+			  	height: calc(100% - 15em);
+				color: #fff;
+				top: 15%;
+				.ng-scope.image {
+					float: left;	
+				}
+			}
+		}
+		.module_3 {
+			.module_content {
+				padding: 20em 4em 10em;
+			  	height: calc(100% - 30em);
+				top: 0;
+				h2, h3 { 
+					color: #ff8a00;	
+				}
+				.ng-scope.image {
+					float: left;	
+				}
+			}
+		}
+		.module_4 {
+			.module_content {
+				padding: 5em 4em 30em;
+			  	height: calc(100% - 35em);
+				top: 0;
+				h2, h3 {
+					color: #ff0000;	
+				}
+			}
+		}
+	}
+	
+	 
+	.module {
+		position: relative;	
+		overflow: hidden;
+		background-repeat: no-repeat;
+		background-size: cover;
+		-moz-background-size: cover;
+		-webkit-background-size: cover;
+		-ms-background-size: cover;
+		-o-background-size: cover;
+		background-position: center center;
+		
+		.module_content {
+			position: relative;
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 940px;
+			left: 0;
+			right: 0;
+			top: 10%;
+			z-index: 2;
+			.ng-scope {
+				float: none; 
+				display: inline-block;  
+				vertical-align: middle; 
+				width: calc( 50% - #{$grid-gutter-width} );
+			}
+		}
+	}
+	
+  .plate {
+    display: block;
+    width:368px;
+    @include SetMargins(auto);
+  }
+  
+  .cta-section {
+    padding-top:68px;
+
+    background-image:url('../img/backgrounds/fence_1.jpg');
+    background-repeat:repeat-y;
+    display:table;
+    width:100%;
+    height:570px;
+    
+    .group {
+      width:33.33333%;
+      height:232px;
+      display:table-cell;
+      vertical-align: top;
+
+      z-index:11;
+
+      position:relative;
+      @include SetPadding(50px);
+
+      &.plate-cell {
+        @include SetPadding(0);
+      }
+
+      p {
+        margin:0;
+        font-size:18px;
+        line-height: 24px;
+      }
+
+      h3 {
+        @include Oswald-Light;
+        font-size:36px;
+        line-height: 36px;
+        color:$colour_red;
+        margin-bottom: 20px;
+      }
+
+      .btn-holder {
+        display: block;
+        position:absolute;
+        width:100%;
+        bottom:0;
+      }
+
+      .btn {
+        width:204px;
+        display: block;
+      }
+
+    }
+
+    .left {
+      // float:left;
+    }
+
+    .right {
+      // padding-left:50px;
+      // float:right;
+    }
+
+  }
+
+
+
+  .pagination {
+    top: 320px;
+    @include breakpoint(tablet) {
+      top:390px;
+    }
+    
+    @include breakpoint(phone) {
+      top:180px;
+    }
+  }
+
+
+  /**************************************************
+  * Modules
+  **************************************************/
+  #home_modules {
+    width:100%;
+
+    // position:relative;
+    // top:130px;
+  }
+
+  .module {
+    width:100%;
+    position:relative;
+    img {
+      width:100%;
+    }
+
+  }
+
+
+
+  .module {
+    // display: block;
+  }
+
+  .module_1 { margin-top:-185px; display:block; }
+  .module_2 { margin-top:-5%; z-index:2; }
+  .module_3 { margin-top:-15%; z-index:1; }
+  .module_4 { margin-top:0; }
+  .featured-dishes { margin-top:-410px; }
+
+
+
+  /* 
+  .module_1 { margin-top:-185px; display:block; }
+  .module_2 { margin-top:-210px; z-index:2; }
+  .module_3 { margin-top:-450px; z-index:1; }
+  .module_4 { margin-top:0; }
+  .featured-dishes { margin-top:-410px; }
+ */
+
+
+  /**************************************************
+  * Phone
+  **************************************************/
+  @include breakpoint(phone) {
+    .masthead-content {
+      font-size:40px;
+      h2 {
+        font-size:0.5em;
+      }
+    }
+
+    .swiper-pagination {
+      bottom:5px!important;
+    }
+
+
+  }
+
+  /**************************************************
+  * Phone & Tablet
+  **************************************************/
+  @include breakpoint(phoneAndTablet) {
+
+    .featured-dishes {
+      margin-top: 0px!important;
+      // width:50%;
+    }
+
+
+    .group {
+      width:80%!important;
+      display: block!important;
+      @include SetMargins(auto!important);
+      @include SetPadding(0!important);
+      height:auto!important;
+      margin-bottom: 50px;
+      text-align: center;
+
+      .btn-holder {
+        position:relative!important;
+        margin-top:20px;
+
+        a {
+          @include SetMargins(auto!important);
+        }
+      }
+      
+    }
+
+    .plateContainer {
+      display: none!important;
+    }
+
+    .plate-cell {
+      display: none!important;
+    }
+
+    .module_1 {
+      margin-top:-0px; 
+    }
+
+
+  }
+
+  /**************************************************
+  * Tablet
+  **************************************************/
+  @include breakpoint(tablet) {
+    .swiper-pagination {
+      bottom:50px!important;
+    }
+
+    .featured-dishes {
+      // width:60%;
+    }    
+
+  }
+
+  /**************************************************
+  * Mid Tablet (sm breakpoint)
+  **************************************************/
+  @include breakpoint(midTablet) {
+    .module_1 { 
+      margin-top:-135px; 
+    }
+  }
+
+  /**************************************************
+  * Tablet & Desktop
+  **************************************************/
+  @include breakpoint(tabletAndDesktop) {
+
+  }
+
+  /**************************************************
+  * Desktop
+  **************************************************/
+  @include breakpoint(desktop) {
+    
+  }
+
+
+  &.ipad {
+    background-color:yellow;
+  }  
+
+
+  #home_modules {
+    //pointer-events:none;
+  }
+
+  .swiper-container {
+    overflow: initial;
+  }
+
+}
+

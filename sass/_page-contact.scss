@@ -1,0 +1,248 @@
+.page-template-page_contact {
+
+  #contact_form {
+    font-size:16px;
+    color: $colour_grey_dark;
+
+    .container {
+      width:100%;
+    }
+
+    p.prompt {
+      @include Lato-Light;
+
+      text-align: center;
+    }
+  }
+
+
+  form {
+    border-top:10px solid $colour_red3;
+    margin-left:0;
+    margin-right:0;
+    font-size:16px;
+  }
+
+  label {
+    display:block;
+    @include Lato-Bold;
+    text-transform: uppercase;
+
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='phone'],
+  input[type='file'],
+  select,
+  textarea {
+    width:100%;
+    outline:none;
+    border:1px solid $colour_grey_light;
+    font-weight: bold;
+  }
+
+  select {
+    padding-top:5px;
+    padding-bottom:6px;
+    font-weight: bold;
+  }
+
+  textarea {
+    height: 152px
+  }
+
+  input[type='submit'] {
+    margin-top:27px;
+    border:none;
+    background-color: $colour_red3;
+    color:$colour_white;
+    text-transform: uppercase;
+    font-size:16px;
+    padding: 8px 50px;
+    @include Lato-Bold;
+
+    &:disabled {
+      background-color:$colour_grey_warm;
+    }
+
+  }
+
+  .form-cell {
+    // border-bottom: 1px solid $colour_red3;
+    height:87px;
+
+    &.left {
+      // border-right: 1px solid $colour_red3;
+    }
+
+    &.message {
+      height: auto;
+      padding-bottom:10px;
+    }
+
+    &.submit {
+      border-bottom:none;
+    }
+
+  }
+
+
+
+
+  .dividerBanner {
+     &.contact_1 {
+        height:300px;
+     }
+     &.contact_2 {
+        height:300px;
+     }
+     &.contact_3 {
+        height:300px;
+     }
+  }
+
+
+  /*****
+  * Spacing
+  *****/
+  .gradientHeader.contact_1 { margin-bottom:27px;}
+  .prompt { margin-bottom: 70px; }
+  #contact_form { margin-bottom: 60px; }
+  .dividerBanner.contact_3 { margin-bottom:83px;}
+
+
+
+
+  @media (max-width: $screen-xs-max) {
+    .form-cell.left {
+      border-right: none;
+    }
+  }
+
+  /**************************************************
+  * Phone
+  **************************************************/
+  @include breakpoint(phone) {
+
+  }
+
+  /**************************************************
+  * Phone & Tablet
+  **************************************************/
+  @include breakpoint(phoneAndTablet) {
+    .dividerBanner.contact_2 {
+      .dividerBanner-image {
+        // background-position:top right;
+      }
+    }
+  }
+
+  /**************************************************
+  * Tablet
+  **************************************************/
+  @include breakpoint(tablet) {
+
+  }
+
+  /**************************************************
+  * Mid Tablet (sm breakpoint)
+  **************************************************/
+  @include breakpoint(midTablet) {
+
+  }
+
+  /**************************************************
+  * Tablet & Desktop
+  **************************************************/
+  @include breakpoint(tabletAndDesktop) {
+
+  }
+
+  /**************************************************
+  * Desktop
+  **************************************************/
+  @include breakpoint(desktop) {
+    
+  }
+
+
+ 
+
+}
+
+/**************************************************
+* Gravity Forms
+**************************************************/
+.page-template-page_contact {
+  .gform_wrapper {
+
+    .gform_body {
+
+      ul li.gfield {
+        clear:none;
+
+        input,
+        select {
+          width:100%;
+        }
+
+        &#field_1_1, 
+        &#field_1_2,
+        &#field_1_5 {
+          height:140px;
+          // padding: 6px 6px 4px 6px !important;        
+
+          &.gfield_error {
+            margin-top:0;
+            border-top:none;
+            border-bottom:none;
+            padding-top:0!important;
+            padding-bottom:0!important;
+            @include SetPadding(15px!important);
+            margin-bottom:0!important;
+
+            div.ginput_container {
+              margin-top:0.375em;
+            }
+
+            label.gfield_label {
+              margin-top: 0.625em;
+            }
+          }
+        }
+
+        &#field_1_5 {
+          margin-top:20px;
+          height:240px;
+        }
+      }
+
+    }  
+
+    div.validation_error {
+      border-top:none;
+      border-bottom: 2px solid $colour_red;
+    }
+
+    .gform_footer {
+      @include SetPadding(15px);
+
+      input[type='submit'] {
+        margin-top:0px;  
+      }
+            
+    }
+  } 
+
+  .gform_confirmation_wrapper {
+    .gform_confirmation_message {
+      font-weight: bold;
+      text-align: center;
+      font-size: 24px;
+      @include SetPaddingV(200px);
+    }
+  }
+
+
+}

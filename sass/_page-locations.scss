@@ -1,0 +1,549 @@
+.page-template-page_locations_1,
+.page-template-page_locations_2,
+.page-template-page_locations_all_open_locations,
+.page-template-page_locations_all_coming_soon_locations {
+
+    #locations-toggle {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        .row {
+            margin: 2em;
+            padding: 0;
+            border: 1px solid $colour_red3;
+        }
+    }
+    .storelocator-container {
+        position: relative;
+    }
+    .storelocator-map {
+        position: absolute;
+        bottom: 0;
+    }
+    .locationsToggle {
+        list-style: none;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        margin: 0;
+        padding: 0.5em 1em;
+        background-color: rgba(228, 225, 225, 0.6);
+        a {
+            color: $colour_red3; 
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        &.active {
+            background-color:  $colour_red3; 
+            a {
+                color: $colour_white;     
+            }
+        }
+    }
+    form.storelocator {
+        z-index: 2;
+        position: relative;
+        top: 0;
+    }
+  .location-search-group {
+        @include flexbox();
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        -o-flex-direction: row;
+        flex-direction: row;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        -o-flex-wrap: wrap;
+        margin: 0 auto;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+        -o-justify-content: space-between;
+        -ms-flex-pack: space-between;
+        align-items: stretch;
+        padding: 0 0 1em;
+        height: inherit;
+        .search-field-group, .city-select-holder, .gps-btn {
+            display: block;
+            //width: auto;
+            float: none;
+            padding-left: 0;
+            margin: 0;
+            
+        }
+      .search-field-group {
+          flex-grow: 3;
+          -moz-flex-grow: 3;
+          -ms-flex-grow: 3;
+          -webkit-flex-grow: 3;
+          -o-flex-grow: 3;
+           -ms-flex-positive: 3;
+          @include flexbox();
+            -webkit-flex-direction: row;
+            -moz-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            -webkit-flex-wrap: nowrap;
+            -moz-flex-wrap: nowrap;
+            -ms-flex-wrap: nowrap;
+            -o-flex-wrap: nowrap;
+          input {
+              border-radius: 0;
+              &[type="text"] {
+                  //width: 100%;
+                  flex-grow: 1;
+                  -moz-flex-grow: 1;
+                  -ms-flex-grow: 1;
+                  -webkit-flex-grow: 1;
+                  -o-flex-grow: 1;
+                  -ms-flex-positive:  1;
+              }
+          }
+      }
+      .city-select-holder {
+          flex-grow: 1;
+          -moz-flex-grow: 1;
+          -ms-flex-grow: 1;
+          -ms-flex-positive:  1;
+          -webkit-flex-grow: 1;
+          -o-flex-grow: 1;
+          .city-select-dropdown {
+              width: 100%;
+              opacity: 0;
+              top: 0;
+              left: 0;
+              position: absolute;
+          }
+          .city-select-label {
+              background-image: url(../img/select-norm.png);
+              background-repeat: no-repeat;
+              padding-right: 7.5%;
+              background-size: contain;
+              background-position: right center;
+              background-color: $colour_white;
+              width: 100%;
+              margin: 0;
+              padding-left: 10px;
+              padding-right: 10px;
+              padding-top: 3px;
+              padding-bottom: 7px;
+              border: 1px solid $colour_red3;
+              color: $colour_grey_light;
+              &:hover {
+                  .city-select-label {
+                      //background-image: url(../img/select-hov.png);
+                  }
+              }
+          }
+          &:hover {
+              .city-select-label {
+                  background-image: url(../img/select-hov.png);
+              }
+          }
+      }
+      .gps-btn {
+          flex-grow: 3;
+          -moz-flex-grow: 3;
+          -ms-flex-grow: 3;
+          -webkit-flex-grow: 3;
+          -o-flex-grow: 3;
+          -ms-flex-positive: 3;
+          background-image: url(../img/gps-norm.png);
+          background-repeat: no-repeat;
+          padding-right: 7.5%;
+          background-size: contain;
+          background-position: right center;
+          &:hover {
+              background-image: url(../img/gps-hov.png);
+              background-color:  $colour_red3; 
+              color: $colour_white; 
+          }
+    }
+
+
+    input[type="text"] {
+      border-right:none;
+    }
+
+    //margin-bottom:20px;
+
+    p {
+      display: inline-block;
+      margin-bottom: 0px;
+    }
+    label {
+    //    display: none;
+    }
+  }
+
+
+  .map {
+    height:406px;
+    #map-canvas {
+      height:100%;
+    }
+
+    margin-bottom: 40px;
+  }
+
+  .location-tile {
+    font-size:16px;
+
+    h5 {
+      font-size:2.25em;
+    }
+
+    h6 {
+      @include Lato-Bold;
+      font-size:1em;
+    }
+
+    .address-block {
+      margin-bottom:10px;
+      height:12.25em;
+    }
+
+    p {
+      font-size:1em;
+      margin-bottom:1em;
+
+      &.address {
+        margin-bottom:0;
+      }
+
+      &.hours {
+        @include Lato-Bold;
+        line-height:1em;
+        height:4em;
+      }
+    }
+
+
+    .features {
+      margin-top:20px;
+      padding:0px;
+    }
+    .feature-icon {
+      display: inline-block;
+      width:21px;
+      height:18px;
+      background-size:42px 18px;
+      background-repeat: no-repeat;
+      margin-right:12px;
+
+      &.hasFeature {
+        background-position:-18px;
+      }
+    }
+
+    margin-bottom:40px;
+  }
+
+  .dividerBanner {
+    .locations_current_1 {
+      height:300px;
+    }
+
+    .locations_comingSoon_1 {
+      height:300px;
+    }
+  }
+
+
+  /**************************************************
+  * Phone
+  **************************************************/
+  @include breakpoint(phone) {
+    .main {
+      margin-top: 0px;
+    }
+
+    .topSpacing {
+      margin-top: 0;
+    }
+
+    .gradientHeader {
+      margin-top:20px;
+      margin-bottom:20px;
+    }
+
+
+    .location-tile {
+       width: 100%;
+    }
+
+    .dividerBanner-content {
+      font-size:14px!important;
+    }
+
+    .search-field-group {
+      margin-bottom:10px;
+
+    }
+    
+    
+
+  }
+
+  /**************************************************
+  * Phone & Tablet
+  **************************************************/
+  @include breakpoint(phoneAndTablet) {
+    .search-field-group {
+      //width:100%;
+    }
+
+
+
+    .location-search-group {
+      span {
+        display: block;
+        width: 100%;
+        text-align: center;        
+        margin-bottom:15px;
+        margin-top:10px;
+      }
+        
+    }
+
+    #search {
+        //width:100%;
+        border-right:1px solid $colour_red!important;
+        flex-grow: 2;
+        -moz-flex-grow: 2;
+        -ms-flex-grow: 2;
+        -ms-flex-positive:  2;
+        -webkit-flex-grow: 2;
+        -o-flex-grow: 2;
+    }
+      input {
+          &.btn-rev {
+              flex-grow: 1;
+              -moz-flex-grow: 1;
+              -ms-flex-grow: 1;
+              -ms-flex-positive:  1;
+              -webkit-flex-grow: 1;
+              -o-flex-grow: 1;
+          }
+      }
+      
+
+    .find-btn {
+      margin-top:10px;
+      display: block;
+      width:100%;
+
+
+    }
+
+    select {
+      width:100%;
+     
+    }
+
+    .gps-btn {
+      margin-top:10px;      
+      //width:100%;
+    }
+      #locations-toggle {
+          ul {
+              &.row {
+                  @include flexbox();
+                  -webkit-flex-direction: row;
+                  -moz-flex-direction: row;
+                  -ms-flex-direction: row;
+                  flex-direction: row;
+                  flex-wrap: wrap;
+                  -webkit-flex-wrap: wrap;
+                  -moz-flex-wrap: wrap;
+                  -ms-flex-wrap: wrap;
+                  -o-flex-wrap: wrap;  
+                  margin-left: 2.5em;
+                  margin-right: 2.5em;
+                  li {
+                      &.locationsToggle {
+                          padding: 0.25em;
+                          flex-grow: 1;
+                          -moz-flex-grow: 1;
+                          -ms-flex-grow: 1;
+                          -ms-flex-positive:  1;
+                          -webkit-flex-grow: 1;
+                          -o-flex-grow: 1;
+                      }
+                  }
+              }
+          }
+         
+          
+      }
+    /*.location-search-group {
+
+        .search-field-group, .city-select-holder {
+            padding-right: 0;
+        }
+        
+        .search-field-group {
+          @include flexbox();
+          input {
+              &[type="text"] {
+              }
+          }
+        }
+        .city-select-holder {
+            //padding-left: 1em;
+            padding-left: 0;
+          .city-select-dropdown {
+          }
+        }
+        .gps-btn {
+            background-image: none;
+            text-align: center;
+            padding-left: 1em;
+            padding-right: 1em;
+            width: 100%;
+            
+            &:hover {
+                background-image: none;
+            }
+        }
+
+
+        input[type="text"] {
+        }
+
+        //margin-bottom:20px;
+
+        p {
+        }
+        label {
+        }
+    }*/
+    .location-search-group {
+
+        .search-field-group, .city-select-holder {
+            padding-right: 0;
+
+
+        }
+        .search-field-group {
+            @include flexbox();
+
+          input {
+              &[type="text"] {
+              }
+          }
+        }
+        .city-select-holder {
+          padding-left: 0;
+
+          .city-select-dropdown {
+          }
+          .city-select-label {
+              background-image: url(../img/select-norm-mobile.png);
+              padding-left: 1%;
+              &:hover {
+                  .city-select-label {
+                      //background-image: url(../img/select-hov.png);
+                  }
+              }
+          }
+          &:hover {
+              .city-select-label {
+                  background-image: url(../img/select-hov-mobile.png);
+              }
+          }
+        }
+        .gps-btn {
+            background-image: none;
+            text-align: center;
+            padding-left: 1em;
+            padding-right: 1em;
+            width: 100%;
+          &:hover {
+              background-image: none;
+          }
+        }
+
+
+        input[type="text"] {
+        border-right:none;
+        }
+
+        //margin-bottom:20px;
+
+        p {
+        display: inline-block;
+        margin-bottom: 0px;
+        }
+        label {
+        //    display: none;
+        }
+        }
+  }
+
+  /**************************************************
+  * Tablet
+  **************************************************/
+  @include breakpoint(tablet) {
+    .locations_current_1 {
+      // height:200px;
+    }
+
+    .address-block {
+      height:15.25em!important;
+    }
+
+
+    .locations_comingSoon_1 {
+      // height:200px;
+    }
+  }
+
+  /**************************************************
+  * Mid Tablet (sm breakpoint)
+  **************************************************/
+  @include breakpoint(midTablet) {
+    .address-block {
+      height:11.25em;
+    }
+  }
+
+  /**************************************************
+  * Tablet & Desktop
+  **************************************************/
+  @include breakpoint(tabletAndDesktop) {
+
+  }
+
+  /**************************************************
+  * Desktop
+  **************************************************/
+  @include breakpoint(desktop) {
+    
+  }
+
+
+
+}
+
+.page-template-page_locations_all_open_locations .location-tile p.hours {
+  height: 0;
+}
+
+body.page-template-page_locations_2 {
+    .storelocator-map {
+        position: relative;
+    }
+}
+
+body.page-template-page_locations_1 {
+    .storelocator-map {
+        border-top: 3em solid $colour_white;
+    }
+}

@@ -1,0 +1,16 @@
+.sm-text {
+	font-size:medium;
+}
+
+.page-template-page_food #foodList .food-title {
+    margin-bottom: 5px !important;
+    margin-top: 20px !important;
+}
+
+.page-template-page_locations_3 .location-tile.col-xs-6.col-md-4 {
+    min-height: 321px !important;
+}
+
+.page-template-page_food #foodList .category-header h3 {
+    margin: 0.5em 0 0.5em 0;
+}

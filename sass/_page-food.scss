@@ -1,0 +1,662 @@
+.page-template-page_food
+ {
+
+  .drinks-only {
+    display: none;
+  }
+
+  &.drinks {
+    .drinks-only {
+      display: block;
+    }
+  }
+
+  .addPadding {
+    // margin-top:20px; // override for issue SGR-99
+  }
+
+  .gradientHeader {
+    margin-bottom:20px; // override for issue SGR-99
+  }
+ /**************************************************
+  * Filter Menu
+  **************************************************/
+  #filter {
+
+    margin-bottom:60px;
+
+    .filter-holder {
+      text-align: center;
+    }
+    .filter {
+      display: inline-block;
+    }
+
+    .button {
+      display: table-cell;
+      vertical-align: middle;
+      background-color:transparent;
+      outline: none;
+      border:none;
+
+
+      >span {
+        display: block;
+
+        display: table-cell;
+        vertical-align: middle;      
+        background-color:$colour_white;
+        color: $colour_red;
+        border: 1px solid $colour_red;
+        font-size:14px;
+        width:204px;
+        height:38px;
+        text-transform: uppercase;
+      }
+
+      >.icon {
+        margin-top:13px;
+        width:64px;
+        height:64px;
+        background-repeat:no-repeat;
+
+        &.favourites {
+          background-image:url('../img/icons/filter_icons/filter_icon_favourites.png');
+        }
+        &.healthy {
+          background-image:url('../img/icons/filter_icons/filter_icon_healthy.png');
+        }
+        &.new {
+          background-image:url('../img/icons/filter_icons/filter_icon_new.png');
+        }
+
+
+        @include CentringMargins;
+      }
+
+      text-align: center;
+      text-decoration: none;
+
+
+      &.selected {
+        >span {
+          background-color:$colour_red;
+          color: $colour_white;
+        }
+
+        >.icon {
+          background-position:-64px 0;
+        }
+
+      }
+
+
+
+      &:active,
+      &:focus {
+        >span {
+          outline: none;
+        }
+      }  
+
+      &:focus {
+        background-color:$colour_white;
+        color: $colour_red;
+
+      }
+
+      &:disabled {
+          >span {
+            background-color:$colour_white;
+            color: $colour_grey_warm;
+            border-color: $colour_grey_warm;
+          }
+
+        &:hover {
+          >span {
+            background-color:$colour_white;
+            color: $colour_grey_warm;
+            border-color: $colour_grey_warm;
+          }
+          >.icon {
+            background-position:0 0;
+          }
+        }
+        opacity: 0.5;
+
+        // border:5px solid red;
+      }
+
+    } 
+  }
+
+  /**************************************************
+  * Food Menu
+  **************************************************/
+  #foodList {
+    .category {
+      @include SetMargins(15px);
+      clear:left;
+    }
+
+    >.container {
+      width:100%;
+    }
+
+    .menuItem {
+      margin-bottom:26px;
+    }
+
+    .category-header {
+      margin-bottom:30px;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    h3 {
+      @include Lato-Light;
+      font-size:36px;
+      color: $colour_grey_dark;
+      margin:0;
+    }
+
+    .top-row {
+        margin-bottom:15px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .food-text {
+      @include SetPadding(0);
+      // min-height:90px;
+    }
+
+    .food-title {
+      @include Lato-Bold;
+      font-size:16px;
+      color:$colour_grey_dark;
+      text-transform: uppercase;
+      margin-bottom:15px;
+      // min-height:45px;
+    }
+
+    .food-price {
+      @include Lato-Bold;
+      font-size:20px;
+      color:$colour_grey_dark;
+      width: auto;
+    }
+
+    .food-description {
+      @include Lato-Light;
+      font-size:16px;
+      font-weight: bold;
+      color: $colour_grey_dark;
+      // min-height:45px;
+    }
+
+    .nutrition-btn {
+      background-color: $colour_grey_warm;
+      color:$colour_red2;
+      @include Lato-Regular;
+      font-size:14px;
+      outline: none;
+      border:none;
+
+      &:hover {
+        background-color: $colour_red2;
+        color:$colour_grey_warm;
+      }
+      &:active,
+      &:focus {
+        border:none;
+        outline: none;
+      }
+
+    }
+
+    .filter-icons {
+      list-style-type: none;
+      padding:0;
+      margin:0;
+      display: inline-block;
+      margin-left:25px;
+
+      li {
+        display: none;
+        @include BackgroundImage('', 28px, 15px);
+        background-size: 84px 15px;
+
+        &.favourites {
+          background-image: url('../img/icons/food_filter/filter_star.png');
+        }
+
+        &.healthy {
+          background-image: url('../img/icons/food_filter/filter_heart.png');
+        }
+
+        &.new {
+          background-image: url('../img/icons/food_filter/filter_new.png');
+        }
+
+        &.on {
+          background-position:-28px 0px;
+          display: inline-block;
+        }
+
+
+
+
+      }
+    }
+
+    $dropdownHeight: 249px;
+    .food-nutrition-mask {
+      height:0;
+      overflow:hidden;
+      // position:relative; // push-down
+      position:absolute; // overlay
+      width:375px;
+      z-index:10;
+
+      @include Transition(0.5s ease-out);
+
+      &.show {
+
+        height:$dropdownHeight - 4;
+
+        .food-nutrition {
+
+          top: 0px;
+        }
+      }
+    }
+
+    .food-nutrition {
+      background-color:$colour_red3;
+      border:1px solid $colour_red3;
+      width:95%;
+      height:$dropdownHeight;
+      position:relative;
+      top:-$dropdownHeight;
+      padding: 0 3px 3px 3px;
+
+      @include Transition(0.5s ease-out);
+
+
+      .close-btn {
+        float:right;
+        font-weight: bold;
+        padding-right: 5px;
+        padding-top: 5px;
+        background-color:transparent;
+        border:none;
+        outline: none;
+        color:$colour_white;
+        @include Lato-Bold;
+      }
+
+      .nutrition-content {
+        @include Helvetica;
+        margin-top:40px;
+        background-color:$colour_white;
+        padding:10px;
+
+        p {
+          margin:0;
+        }
+
+      }
+
+      .nutrition-title {
+        font-weight:bold;
+        font-size:18px;
+      }
+
+      .nutrition-serving {
+        font-weight: bold;
+        font-size:12px;
+        border-bottom:2px solid $colour_black;
+      }
+
+      .nutrition-header {
+        font-size:12px;
+        font-weight: normal;
+        width:100%;
+        .spacer {
+          width:32px;
+        }
+        border-bottom: 1px solid $colour_black;
+      }
+
+      .align-right {
+        text-align: right;
+      }
+
+      .nutrition-items {
+        width:100%;
+        font-size:12px; 
+
+        td {
+          border-bottom:1px solid $colour_black;
+
+          &.no-border {
+            border-bottom: none;  
+          }
+        }
+
+        .spacer {
+          width:55px;
+          border-bottom: none;
+        }
+
+      }
+
+      .indent {
+        padding-left:10px;
+      }
+
+      .percentage {
+        font-weight: bold;
+        &:after {
+          content: ' %';
+        }
+      }
+
+      .vitamins {
+        border-top:2px solid $colour_black;
+      }
+
+
+    }
+
+
+
+
+  }
+
+
+  .disclaimer {
+    font-size:14px;
+
+    p {
+      font-size:1em;
+      margin-bottom:0;
+    }
+  }
+
+  .otherMenuItems {
+    margin-top:50px;
+    >.container {
+      width:100%;
+    }
+
+    p {
+
+    }
+
+    .btn {
+      width:100%;
+    }
+
+  }
+
+  #dividerRotator {
+    margin-top:66px;
+
+    .rotator-image {
+      height: 300px;
+      background-size:cover;
+    }
+
+    .pagination {
+      position:relative;
+      top:-60px;
+    }
+
+
+  }  
+
+}
+
+.otherMenuItems {
+  border:1px solid $colour_red;
+  padding:20px;
+  h4 {
+    margin-bottom:20px;
+  }  
+
+
+
+  ul {
+    list-style-type: none;
+    padding:0;
+    margin:0;
+
+    li {
+      padding:0;
+      margin:0;
+
+      a {
+        font-weight: bold;
+        color:$colour_grey_dark;
+        
+      }
+
+    }
+  }
+
+}
+
+.page-template-page_food {
+
+  @include breakpoint(phone) {
+    #filter {
+      margin-bottom:20px;
+    }
+
+
+    $dropdownHeight:205px;
+
+
+
+    .centreColumn {
+      width:100%!important;
+    }
+
+    .food-nutrition-mask {
+      width:100%!important;
+      // height:400px!important;
+
+      &.show {
+        height:$dropdownHeight!important;
+      }
+
+
+      .food-nutrition {
+        height:$dropdownHeight!important;
+        position:relative;
+        width:100%!important;
+        top:-$dropdownHeight;
+
+        // height:400px!important;
+      }
+
+      .nutrition-header {
+        font-size:8px!important;
+      }
+
+      .nutrition-items {
+        font-size:8px!important;
+      }
+
+      // border:3px solid green;
+    }
+
+    &.no-touch {
+      #filter {
+        .button {
+          &:hover {
+            >span {
+              background-color:$colour_red;
+              color: $colour_white;
+            }
+
+            >.icon {
+              background-position:-64px 0;
+            }
+
+          }  
+
+          &:disabled {
+            >span {
+              background-color:$colour_white;
+              color: $colour_grey_warm;
+              border-color: $colour_grey_warm;
+            }
+
+          &:hover {
+            >span {
+              background-color:$colour_white;
+              color: $colour_grey_warm;
+              border-color: $colour_grey_warm;
+            }
+            >.icon {
+              background-position:0 0;
+            }
+          }
+          opacity: 0.5;
+
+          // border:5px solid red;
+        }
+
+
+        }
+      }
+    }
+
+
+    #filter {
+
+
+      .filter-holder {
+        text-align: left!important;
+        // border-bottom:1px solid $colour_red;
+        // padding-bottom:10px;
+        padding-left:20px;
+        padding-right:20px;
+
+        h4 {
+          margin-bottom:10px;
+        }
+      }
+
+
+      .filter {
+        width:100%;
+
+        button {
+          display:table-cell;
+          vertical-align: middle;
+          display: block;
+          text-align: left;
+          height:40px;
+          border:1px solid $colour_grey_warm;
+          width:100%;
+          margin-bottom: 5px;
+
+          span {
+            font-weight: bold;
+            display: inline-block;
+            border:none!important;
+            height:auto!important;
+
+          }
+
+          .icon {
+            display: none!important;
+          }
+
+
+          &:before {
+            content:'';
+            @include BackgroundImage('', 28px, 15px);
+            background-size: 84px 15px;
+            display:inline-block;
+            background-position:-28px 0;
+            position:relative;
+            top:3px;
+
+          }
+
+        }
+
+
+        &.favourites {
+          button:before {
+            background-image: url('../img/icons/food_filter/filter_star.png');
+          }
+        }
+
+        &.healthy {
+          button:before {
+            background-image: url('../img/icons/food_filter/filter_heart.png');
+          }
+        }
+
+        &.new {
+          button:before {
+            background-image: url('../img/icons/food_filter/filter_new.png');
+          }
+        }
+
+        button:focus,
+        button:active {
+          span {
+            background-color:transparent;
+            color:$colour_red;
+          }
+          background-color:transparent;
+          &:before {
+            background-position:-28px 0;
+          }
+        }
+
+
+        /*
+        button:hover {
+          span {
+            background-color:transparent;
+            color:$colour_white;
+          }
+          background-color:$colour_red;
+          &:before {
+            background-position:-56px 0;
+          }
+        }
+        */
+
+
+        button.selected {
+          &:before {
+            background-position:-56px 0;
+          }
+          background-color:$colour_red;
+
+          span {
+            background-color:transparent;
+            color:$colour_white;
+          }
+
+        }
+
+
+      }
+    }
+
+
+
+
+
+  }
+}

@@ -1,0 +1,285 @@
+.dividerBanner {
+  text-align: center;
+  position:relative;
+
+  height:300px;
+
+  .dividerBanner-image {
+    @include backgroundSize(cover);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width:100%;
+    height:60px;
+
+  }
+
+  .dividerBanner-content {
+    &.text-large {
+      font-size:24px;
+    }
+    
+    &.text-large {
+      font-size:24px;
+    }
+
+    h3 {
+      @include Lato-Bold;
+      margin-bottom:0;
+    }
+
+    p {
+      margin-bottom:0;
+    }
+  }
+
+  .dividerBanner-button {
+    @include Lato-Bold;
+    border:1px solid $colour_red;
+    color: $colour_red;
+    text-transform: uppercase;
+    padding: 9px 2%;
+    text-decoration: none;
+    margin-top:1em;
+    display: inline-block;
+    font-size:14px;
+
+    &:hover {
+      color:$colour_white;
+      background-color:$colour_red;
+      text-decoration: none;
+    }
+
+    &.force-legible {
+      background-color:$colour_white;
+      &:hover {
+        background-color:$colour_red;
+      }
+    }
+  }
+
+
+
+
+  .icon {
+    position:relative;
+    top: -8px;
+
+    &.pdf {
+      &:before {
+        content: '';
+        background-image: url('../img/icons/pdficon_large.png');
+        width:32px;
+        height:32px;
+        display: inline-block;
+        background-size: 32px 32px;
+        background-repeat:no-repeat;
+        position:relative;
+        top:6px;
+        margin-right:10px;
+      }
+    }
+  }
+
+  .dividerBanner {
+    text-align: center;
+    position:relative;
+    height:300px;
+
+  }
+
+  .dividerBanner-image {
+    height:100%;
+  }
+  
+  .dividerBanner-content {
+    width:100%;
+    position:absolute;
+    top:0px;
+    display: table;
+    height: 100%;
+
+    .dividerBanner-content-holder {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+  }
+
+  .dividerBanner-content {
+    h3 {
+      font-size:1em;
+    }
+
+    p {
+      width:66.66666%;
+      margin-left:auto;
+      margin-right:auto;
+    }
+  }  
+
+
+  /**************************************************
+  * Phone
+  **************************************************/
+  @include breakpoint(phone) {
+    height:200px!important;
+
+    &.franchise_application_3 {
+      height:300px!important;
+
+    }
+
+
+    .dividerBanner-content {
+      font-size:14px!important;
+
+      // .text-large {
+      //   font-size:20px;
+      // }
+
+
+      h3 {
+        font-size:2em;
+      }
+
+      p.hide-phone {
+        display: none;
+      }
+    }
+
+
+
+  }
+
+  /**************************************************
+  * Tablet
+  **************************************************/
+  @include breakpoint(tablet) {
+    .dividerBanner-content {
+
+      &.text-large {
+        font-size:20px;
+      }
+
+      h3 {
+        font-size:1em;
+      }
+
+      p {
+        line-height: 1.25em;
+        font-size:1em;
+      }
+    }    
+
+  }
+
+  /**************************************************
+  * Tablet & Desktop
+  **************************************************/
+  @include breakpoint(tabletAndDesktop) {
+
+  }
+
+  /**************************************************
+  * Desktop
+  **************************************************/
+  @include breakpoint(desktop) {
+    
+  }
+
+
+}
+
+/**************************************************
+* Divider Rotator
+**************************************************/
+.dividerRotator {
+  .rotator-content {
+    width:100%;
+    position:absolute;
+    top:0px;
+    display: table;
+    height:300px;
+    font-size:24px;
+
+  }
+
+  .divider-slides {
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+  }
+
+  .rotator-content-holder {
+    display: table-cell;
+    vertical-align: middle;
+    @include SetPadding(25%);
+  }
+
+
+  h3 {
+    @include Lato-Bold;
+    font-size:1em;
+    margin-bottom:0px
+
+  }
+
+  p {
+    @include Lato-Light;
+    font-size:1em;
+    margin-bottom:0;
+  }
+
+  .swiper-pagination {
+    bottom:20px!important;
+
+  }
+
+  @include breakpoint(phoneAndTablet) {
+    .rotator-content {
+      font-size:16px;
+      height:200px;
+    }
+
+    .rotator-content-holder {
+      @include SetPadding(20px!important);
+    }
+
+    .swiper-pagination {
+      bottom:20px!important;
+    }
+
+    .rotator-image {
+      height:200px!important;
+    }
+
+
+  }
+
+  @include breakpoint(phone) {
+    .swiper-pagination {
+      bottom:10px!important;
+    }
+  }
+
+  @include breakpoint(midTablet) {
+    .rotator-content-holder {
+      @include SetPadding(20%!important);
+    }
+
+    .swiper-pagination {
+      bottom:20px!important;
+    }    
+
+    .rotator-content {
+      font-size:20px;
+      height:300px!important;
+    }
+
+    .rotator-image {
+      height:300px!important;
+    }    
+
+  }
+
+}

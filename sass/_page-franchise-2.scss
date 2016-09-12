@@ -1,0 +1,62 @@
+.page-template-page_franchise_2 {
+  #columns_2 {
+    margin-bottom:50px;
+  } 
+
+  .gradientHeader.franchise_structure_2 {
+    margin-bottom:20px;
+  }
+
+
+  .columnContent {
+    td {
+      @include SetPaddingV(5px!important);
+
+    }
+  }
+
+  /**************************************************
+  * Phone
+  **************************************************/
+  @include breakpoint(phone) {
+
+  }
+
+  /**************************************************
+  * Phone & Tablet
+  **************************************************/
+  @include breakpoint(phoneAndTablet) {
+
+  }
+
+  /**************************************************
+  * Tablet
+  **************************************************/
+  @include breakpoint(tablet) {
+
+  }
+
+  /**************************************************
+  * Mid Tablet (sm breakpoint)
+  **************************************************/
+  @include breakpoint(midTablet) {
+
+  }
+
+  /**************************************************
+  * Tablet & Desktop
+  **************************************************/
+  @include breakpoint(tabletAndDesktop) {
+
+  }
+
+  /**************************************************
+  * Desktop
+  **************************************************/
+  @include breakpoint(desktop) {
+    
+  }
+
+
+}
+

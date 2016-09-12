@@ -1,0 +1,283 @@
+@media (max-width: $screen-xxs-min) {
+	body {
+    font-size:14px;
+	
+	&.page-template-page_home {
+		.wrapper {
+			#home_modules {
+				.home_block_title { 
+					strong {
+					}
+				}
+				.module {
+					 .module_content {
+						 .ng-scope {
+							&:first-child {
+								img {
+								}
+							}
+						}
+					}
+				}
+				.module_content { 
+					h2 {
+						}
+						h3 {
+						}
+						p {
+						}
+						.ng-scope {
+						}
+				}
+				.module_1 {
+					.module_content {
+						
+					}
+				}
+				.module_2 {
+					margin-top: -25% !important;
+					.module_content {
+						
+					}
+				} 
+				.module_3 {
+					.module_content {
+											
+					}
+				}
+				.module_4 {
+					.module_content {
+											
+					}
+				}
+			}
+		}
+	}
+  }	
+}
+@media (max-width: $screen-xs-min) {
+	body {
+    font-size:14px;
+	
+	&.page-template-page_home {
+		.wrapper {
+			#home_modules {
+				.home_block_title { 
+					position: relative;
+					line-height: 1.5em;
+					strong {
+						font-size: 1.5em;	
+						line-height: 1em;
+					}
+				}
+				.module {
+					 .module_content {
+						 .ng-scope {
+							&:first-child {
+								img {
+									margin-bottom: 1em;
+								}
+							}
+						}
+					}
+				}
+				.module_content { 
+					h2 {
+							font-size: 1.5em;
+							line-height: 1em;
+							font-weight: 600;
+						}
+						h3 {
+							font-size: 1.5em;
+							line-height: 1em;
+							font-weight: 600 !important;	
+						}
+						p {
+							font-size: 1.3em;	
+							line-height: 1em; 
+							font-weight: 100;
+						}
+						.ng-scope {
+							display: block;
+							width: auto;
+							position: relative;	
+							&.image {
+								float: none;
+							}
+						}
+				}
+				.module_1 {
+					.module_content {
+						padding: 1em 0em 5em;
+						height: calc(100% - 6em);
+						
+					}
+				}
+				.module_2 {
+					margin-top: -20%;
+					.module_content {
+						padding: 5em 0em;
+						height: calc(100% - 10em);
+						
+					}
+				}
+				.module_3 {
+					.module_content {
+						padding: 5em 0em;
+						height: calc(100% - 10em);
+											
+					}
+				}
+				.module_4 {
+					.module_content {
+						padding: 5em 0em;
+						height: calc(100% - 10em);
+											
+					}
+				}
+			}
+		}
+	}
+  }
+}
+
+@media (max-width: $screen-sm-min - 1) {
+  body {
+    font-size:16px;
+  }
+
+}
+
+@media (max-width: $screen-sm-min) {
+  body {
+    font-size:16px;
+	&.page-template-page_home {
+		#home_modules {
+			.home_block_title { 
+				line-height: 3em;
+				strong {
+					font-size: 1.5em;	
+				}
+			}
+			.module_content { 
+				h2 {
+						font-size: 2em;
+						line-height: 1em;
+					}
+					h3 {
+						font-size: 1.5em;
+						line-height: 1em;	
+					}
+					p {
+						font-size: 1.3em;
+						line-height: 1em; 
+						font-weight: 100;	
+					}
+			}
+			.module_1 {
+				.module_content {
+					padding-top: 5em;
+					padding-bottom: 5em;
+					
+					
+				}
+			}
+			.module_2 {
+				.module_content {
+					
+					
+									
+				}
+			}
+			.module_3 {
+				.module_content {
+					padding-top: 10em;
+					
+										
+				}
+			}
+			.module_4 {
+				.module_content {
+					padding-bottom: 5em;
+										
+				}
+			}
+		}
+	}
+  }
+}
+
+@media (max-width: $screen-md-min) {
+  body {
+    font-size:16px;
+  }
+}
+
+
+@media (max-width: $screen-lg-min) {
+  body {
+    font-size:16px;
+	&.page-template-page_home {
+		#home_modules {
+			.home_block_title { 
+				strong {
+				}
+			}
+			.module_content { 
+			}
+			.module_1 {
+				.module_content {
+					padding-left: 2em;
+					padding-right: 2em;
+					h2 {
+					}
+					h3 {
+					}
+					p {
+					}
+				}
+			}
+			.module_2 {
+				margin-top: -10%;
+				
+				.module_content {
+					padding-left: 2em;
+					padding-right: 2em;
+					h2 {
+					}
+					h3 {
+					}
+					p {
+					}					
+				}
+			}
+			.module_3 {
+				
+				.module_content {
+					padding-left: 2em;
+					padding-right: 2em;
+					h2 {
+					}
+					h3 {
+					}
+					p {
+					}					
+				}
+			}
+			.module_4 {
+				
+				.module_content {
+					padding-left: 2em;
+					padding-right: 2em;
+					h2 {
+					}
+					h3 {
+					}
+					p {
+					}					
+				}
+			}
+		}
+	}
+  }
+}

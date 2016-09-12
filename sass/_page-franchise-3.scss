@@ -1,0 +1,68 @@
+.page-template-page_franchise_3 {
+  
+  #columns_2 {
+    margin-bottom:50px;
+  } 
+
+  .gradientHeader.franchise_structure_2 {
+    margin-bottom:20px;
+  }
+
+  .columnContent.franchise_application_1 {
+    margin-bottom:50px;
+  }
+
+
+/**************************************************
+  * Phone
+  **************************************************/
+  @include breakpoint(phone) {
+
+  }
+
+  /**************************************************
+  * Phone & Tablet
+  **************************************************/
+  @include breakpoint(phoneAndTablet) {
+    #textImage_block_2 {
+      .textImageBlock-image {
+        background-position: top left;
+        height:400px;
+
+      }
+    }
+
+    .franchise_application_2 {
+      height:200px!important;
+    }
+  }
+
+  /**************************************************
+  * Tablet
+  **************************************************/
+  @include breakpoint(tablet) {
+
+  }
+
+  /**************************************************
+  * Mid Tablet (sm breakpoint)
+  **************************************************/
+  @include breakpoint(midTablet) {
+
+  }
+
+  /**************************************************
+  * Tablet & Desktop
+  **************************************************/
+  @include breakpoint(tabletAndDesktop) {
+
+  }
+
+  /**************************************************
+  * Desktop
+  **************************************************/
+  @include breakpoint(desktop) {
+    
+  }  
+
+}

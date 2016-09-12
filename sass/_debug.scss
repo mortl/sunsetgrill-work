@@ -1,0 +1,64 @@
+.breakpoint-indicator {
+  display: block;
+  //display: none;
+  position:fixed;
+  bottom:25px;
+  left:0px;
+  z-index:5;
+  background-color: yellow;
+  border:2px solid black;
+
+  .breakpoint-text {
+    font-size:12px;
+    font-weight: bold;
+
+  }
+
+
+}
+
+@media (max-width: $screen-xs-min - 1) {
+  .breakpoint-text {
+    background-color:hsl(120, 30%, 50%);
+    &:after {
+      content:"<screen-xs-min";
+    }
+  }
+}
+
+
+@media (min-width: $screen-xs-min) {
+  .breakpoint-text {
+    background-color:hsl(120, 40%, 60%);
+    &:after {
+      content:"screen-xs-min";
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .breakpoint-text {
+    background-color:hsl(120, 60%, 80%);
+    &:after {
+      content:"screen-sm-min";
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .breakpoint-text {
+    background-color:hsl(0, 60%, 80%);
+    &:after {
+      content:"screen-md-min";
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .breakpoint-text {
+    background-color:hsl(0, 100%, 60%);
+    &:after {
+      content:"screen-lg-min";
+    }
+  }
+}

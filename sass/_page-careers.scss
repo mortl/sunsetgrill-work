@@ -1,0 +1,123 @@
+.careers {
+
+  .gradientHeader.careers_1 {
+    margin-top:20px;
+  }
+
+  .gradientHeader.careers_2 {
+    // margin-bottom:20px;
+  }
+
+  /**************************************************
+  * Current Openings
+  **************************************************/
+  .job-tile {
+    height: 280px; // needed to ensure proper responsive flow (otherwise, things stack strangely)
+    // background-color:#FFFFCC;
+    h3 {
+      margin-bottom: 29px;
+      margin-left: -5px;
+    }
+
+    margin-bottom:36px;
+
+    p:last-child {
+      margin-bottom:20px;
+    }    
+  }
+
+
+
+  /**************************************************
+  * Positions
+  **************************************************/
+  #careers_positions {
+    //background-color:#EFEF00;
+    background-image:url('../img/backgrounds/fence_2.jpg');
+    background-repeat:repeat-y;
+    padding-top:35px;
+    // margin-top:-86px;
+
+    margin-bottom:109px;
+
+
+    .ui-accordion-header {
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+
+
+  /**************************************************
+  * Phone
+  **************************************************/
+  @include breakpoint(phone) {
+    #careers_positions {
+      font-size:0.75em;
+    }
+
+
+  }
+
+  /**************************************************
+  * Phone & Tablet
+  **************************************************/
+  @include breakpoint(phoneAndTablet) {
+    .job-tile {
+      height:auto!important;
+    }
+  }
+
+  /**************************************************
+  * Tablet
+  **************************************************/
+  @include breakpoint(tablet) {
+    .job-tile {
+      height:auto!important;
+    }
+  } 
+
+  /**************************************************
+  * Mid Tablet
+  **************************************************/
+  @include breakpoint(midTablet) {
+    .job-tile {
+      height:280px!important;
+    }
+  }
+
+  /**************************************************
+  * Tablet & Desktop
+  **************************************************/
+  @include breakpoint(tabletAndDesktop) {
+
+  }
+
+  /**************************************************
+  * Desktop
+  **************************************************/
+  @include breakpoint(desktop) {
+    
+  }
+
+
+
+
+
+  .dividerBanner.careers_1 { height:200px; }
+
+  @media (max-width: $screen-xs-max) {
+    // .job-tile {
+    //   height:auto;
+
+    //   p:last-child {
+    //     margin-bottom:20px;
+    //   }
+    // }
+  }
+
+
+}
+

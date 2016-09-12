@@ -1,0 +1,169 @@
+body {
+  margin:0;
+  padding:0;
+
+  @include Lato-Light;
+  font-size:16px;
+}
+
+
+.wrapper {
+  width:100%;
+  max-width:1600px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+h1, h2, h3, h4 {
+  margin:0;
+  font-weight:normal;
+}
+
+
+h3 {
+  font-size:2.25em;
+  margin-bottom:1.22222em;
+  font-weight: bold!important;
+}
+
+h4 {
+  @include Lato-Bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  
+}
+
+p {
+  font-size:1.0em;
+  line-height:1.75em;
+  // margin-bottom:2.75em;
+  margin-bottom:1.5em;
+  margin-top:0px;
+  font-weight: bold;
+
+  strong {
+    @include Lato-Black;
+  }
+
+}
+
+button {
+  font-weight: bold;
+}
+/* 
+div {
+  font-weight: bold;
+  strong {
+   @include Lato-Black; 
+  }
+}
+ */
+ 
+td, th {
+  font-weight: bold;
+}
+
+.textImageBlock-content {
+  p {
+    // margin-bottom:1.5em;
+  }
+}
+
+hr {
+  border:none;
+  border-bottom:1px solid red;
+  width:27px;
+  text-align:left;
+  margin-left:0;
+  margin-bottom:0.7em;
+  margin-top:1em;
+
+
+}
+
+.full {
+  width:100%;
+}
+div.results.row {
+    ul {
+        @include flexbox();
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -o-flex-wrap: wrap;
+        padding: 0 1em;
+        div {
+            &[class*="-tile"]{
+                &[class*="col"] {
+                    float: none;
+                    display: inline-block;
+                    
+                    //iPad in portrait & landscape
+                    @media only screen 
+                    and (min-device-width : 768px) 
+                    and (max-device-width : 1024px)  { width: 100%;}
+                    
+                    //iPhone 6 in portrait & landscape
+                    @media only screen 
+                    and (min-device-width : 375px) 
+                    and (max-device-width : 667px)  { width: 100%;}
+                    
+                    //iPhone 6 Plus in portrait & landscape
+                    @media only screen 
+                    and (min-device-width : 414px) 
+                    and (max-device-width : 736px)  { width: 100%;}
+                    
+                    //iPhone 5 & 5S in portrait & landscape
+                    @media only screen 
+                    and (min-device-width : 320px) 
+                    and (max-device-width : 568px)  { width: 100%;}
+                    
+                    //iPhone 2G-4S in portrait & landscape
+                    @media only screen 
+                    and (min-device-width : 320px) 
+                    and (max-device-width : 480px)  { width: 100%;}
+                    
+                }
+            }
+        }
+    }
+}
+.upper {
+  text-transform: uppercase;
+}
+
+tr.alt {
+  color: $colour_grey_light;
+}
+main {
+    z-index: 1;
+}
+.featured-dishes {
+    position: relative;
+    z-index: 2;
+}
+#foodList {
+    .menuItem {
+        float: none;
+        display: inline-block;
+        vertical-align: top;
+        .nutrition-btn {
+            display: none;
+        }
+    }
+    
+}
+.swiper-wrapper {
+    overflow: initial;
+}
+.swiper-container {
+    overflow: hidden;
+}
+section[ng-app^="HomeRotator"] {
+    position: relative;
+    overflow: hidden;
+}

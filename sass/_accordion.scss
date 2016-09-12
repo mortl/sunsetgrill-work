@@ -1,0 +1,19 @@
+.ui-accordion {
+  .ui-accordion-header .ui-accordion-header-icon {
+    left:auto!important;
+    right:0.5em;
+  }
+
+  .ui-accordion-content {
+    p:last-child {
+      margin-bottom:20px;
+    }
+  }
+
+  .ui-state-default {
+    background: hsl(0, 100%, 100%) url("//code.jquery.com/ui/1.11.3/themes/smoothness/images/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x;
+  }
+
+
+
+}

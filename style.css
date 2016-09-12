@@ -1,0 +1,40 @@
+/*
+	Theme Name: Sunset Grill working theme
+	Theme URI: http://html5blank.com
+	Description: HTML5 Blank WordPress Theme
+	Version: 1.5
+	Author: Martin Benes [Todd Motto (@toddmotto)]
+	Author URI: http://toddmotto.com
+	Tags: Blank, HTML5, CSS3
+
+	License: MIT
+	License URI: http://opensource.org/licenses/mit-license.php
+*/
+
+/*------------------------------------*\
+    MAIN
+\*------------------------------------*/
+
+/* global box-sizing */
+*,
+*:after,
+*:before {
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	-webkit-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+
+.featured-dishes a:hover {
+	text-decoration:none!important;
+}
+
+/* This changes the Instagram post text to Purple.*/
+.masthead-content-holder .instagram-text {
+color:#8B3FA3 !important;
+ 
+ text-shadow:1px 1px #fff !important;
+ font-weight:900;
+}
+

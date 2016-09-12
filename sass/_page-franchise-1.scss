@@ -1,0 +1,117 @@
+.page-template-page_franchise_1 {
+ 
+  /*****
+  * Spacing
+  *****/
+  .gradientHeader.contact_1 { margin-bottom:27px;}
+  .gradientHeader.franchise_about_2 {
+     margin-top:$gradientTextMarginTop;
+     margin-bottom:$gradientTextMarginBottom;
+   }
+  .prompt { margin-bottom: 70px; }
+  #contact_form { margin-bottom: 60px; }
+  .dividerBanner.contact_2 { margin-bottom:83px;}
+
+
+
+
+
+}
+
+.page-template-page_franchise_1,
+.page-template-page_franchise_2,
+.page-template-page_franchise_3 {
+
+  .dividerBanner {
+    height:300px;
+  }
+
+  .sig-name {
+    letter-spacing: 2px    
+  }
+
+
+  /**************************************************
+  * Phone
+  **************************************************/
+  @include breakpoint(phone) {
+    .masthead {
+      font-size:40px;
+    }
+
+
+    .dividerBanner {
+
+      &.franchise_about_1 {
+        // height:200px!important;
+        // .dividerBanner-content {
+        //   font-size:14px!important;
+        // }
+      }
+
+      &.franchise_about_3 {
+        height:300px!important;
+      }
+    }
+
+    #franchise_submenu {
+      .gradientHeader {
+        margin-bottom:10px;
+      }
+
+      .row {
+        span {
+          display: none;
+        }
+      }
+    }
+
+
+
+  }
+
+  /**************************************************
+  * Phone & Tablet
+  **************************************************/
+  @include breakpoint(phoneAndTablet) {
+    #textImage_block_2,
+    #textImage_block_3 {
+      .textImageBlock-image {
+        background-position: top left;
+        height:400px;
+
+      }
+    }
+  }
+
+  /**************************************************
+  * Tablet
+  **************************************************/
+  @include breakpoint(tablet) {
+
+
+  }
+
+  /**************************************************
+  * Mid Tablet (sm breakpoint)
+  **************************************************/
+  @include breakpoint(midTablet) {
+
+  }
+
+  /**************************************************
+  * Tablet & Desktop
+  **************************************************/
+  @include breakpoint(tabletAndDesktop) {
+
+  }
+
+  /**************************************************
+  * Desktop
+  **************************************************/
+  @include breakpoint(desktop) {
+    
+  }
+
+
+}

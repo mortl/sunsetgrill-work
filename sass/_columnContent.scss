@@ -1,0 +1,36 @@
+.columnContent {
+
+  @include breakpoint(xsMax) {
+    >div {
+      hr {
+        display: none;
+      }
+    }
+
+    >div:first-child {
+      hr {
+        display: block;
+      }
+    }
+
+  }
+
+
+  table {
+    tr:nth-child(2n+1) {
+      font-weight: bold;
+    }
+
+    td {
+      vertical-align: top;
+      padding-left:10px;
+    }
+    margin-bottom:30px;
+  }
+
+  li {
+    font-weight: bold;
+  }
+
+
+}

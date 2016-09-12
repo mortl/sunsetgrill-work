@@ -1,0 +1,106 @@
+.gradientHeader {
+
+  width:100%;
+  text-align: center;
+  margin-bottom:20px; // TODO: this may need to change
+
+  &.topSpacing {
+    margin-top:75px;
+  }
+
+  /**************************************************
+  * Phone
+  **************************************************/
+  @include breakpoint(phone) {
+    strong {
+      font-size:35px;
+      line-height: 45px;
+    }
+  }
+
+  /**************************************************
+  * Phone & Tablet
+  **************************************************/
+  @include breakpoint(phoneAndTablet) {
+
+  }
+
+  /**************************************************
+  * Tablet
+  **************************************************/
+  @include breakpoint(tablet) {
+
+  }
+
+  /**************************************************
+  * Tablet & Desktop
+  **************************************************/
+  @include breakpoint(tabletAndDesktop) {
+
+  }
+
+  /**************************************************
+  * Desktop
+  **************************************************/
+  @include breakpoint(desktop) {
+    
+  }
+
+}
+
+.gradientTextCanvas {
+  text-align: center;
+
+  &.autosize {
+    width:auto;
+    text-align: left;
+  }
+
+  canvas.shrink {
+    width:100%; 
+  }  
+
+}
+
+
+
+
+/* 
+.svg_gradientHeader {
+  svg {
+    width:auto;
+    height:60px;
+    @include SetMargins(auto);
+    display: block;
+
+  }
+
+  margin-bottom: 50px;
+}
+
+.webkit {
+  .svg_gradientHeader {
+    display: none!important;
+  } 
+}
+
+.mozilla {
+  .gradientHeader {
+    display: none!important;
+  } 
+
+  @include breakpoint(phoneAndTablet) {
+    .gradientHeader {
+      display: block!important;
+    } 
+
+    .svg_gradientHeader {
+      display: none!important;
+    } 
+    
+  }
+
+
+}
+
+ */

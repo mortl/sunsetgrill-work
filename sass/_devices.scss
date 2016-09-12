@@ -1,0 +1,144 @@
+@mixin breakpoint($point) {
+  @if $point == desktop {
+     @media (min-width: $screen-md-min) { @content ; }
+  }
+  @else if $point == midTablet {
+     @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { @content ; }
+  }
+  @else if $point == tablet {
+     @media (min-width: $screen-xs-min) and (max-width: $screen-sm-max) { @content ; }
+  }
+  @else if $point == phone {
+     @media (max-width: $screen-xs-min)  { @content ; }
+  }
+  @else if $point == tiny {
+     @media (max-width: 373px)  { @content ; }
+  }
+  @else if $point == phoneAndTablet {
+     @media (max-width: $screen-sm-max)  { @content ; }
+  }
+  @else if $point == tabletAndDesktop {
+     @media (min-width: $screen-xs-min)  { @content ; }
+  }
+  @else if $point == xsMax {
+     @media (max-width: $screen-xs-max)  { @content ; }
+  }
+}
+
+
+.devices {
+  position: fixed;
+  z-index:50;
+  // width:300px;
+  border:2px solid hsl(208, 90%, 70%);
+  border-left:none;
+  border-bottom:none;
+  background-color: hsl(208, 90%, 60%);
+  color:white;
+  padding:3px 5px;
+  text-align: left;
+  font-weight: bold;
+  bottom:0px;
+  font-size: 10px;
+  border-radius: 0 10px 0 0;
+  >div {
+    display: inline-block;
+  }
+  //display: none;
+
+}
+
+// Phones
+@include breakpoint(phone) {
+  .devices {
+    .tablet,
+    .desktop {
+      display: none;
+    }
+
+    .phone {
+      &:after {
+        content: ' [0px - ' +  $screen-xs-min + ']';
+      }
+    }
+  }
+}
+
+// Tablets
+@include breakpoint(tablet) {
+  .devices {
+    .phone,
+    .desktop {
+      display: none;
+    }
+
+    .tablet {
+      &:after {
+        content: ' [' + $screen-xs-min + ' - ' + $screen-sm-max + ']';
+      }
+    }
+  }
+}
+
+// Desktop
+@include breakpoint(desktop) {
+  .devices {
+    .phone,
+    .tablet {
+      display: none;
+    }
+
+    .desktop {
+      &:after {
+        content: ' [ ' + $screen-md-min + ' + ]';
+      }
+    }
+  }
+}
+
+
+/**************************************************
+* Device-specific Elements
+**************************************************/
+.per-device {
+}
+
+@include breakpoint(phone) {
+  .on-tablet,
+  .on-desktop {
+    display: none;
+  }
+
+  .on-phone {
+    display: initial;
+  }
+}
+
+@include breakpoint(tablet) {
+  .on-phone,
+  .on-desktop {
+    display: none;
+  }
+
+  .on-tablet {
+    display: initial;
+  }
+}
+
+@include breakpoint(desktop) {
+  .on-phone,
+  .on-tablet {
+    display: none;
+  }
+
+  .on-desktop {
+    display: initial;
+  }
+
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 90%;
+  }
+}

@@ -1,0 +1,87 @@
+.page-template-page_franchise_1,
+.page-template-page_franchise_2,
+.page-template-page_franchise_3
+ {
+ /**************************************************
+  * Franchise Menu
+  **************************************************/
+  a.button {
+    display: table-cell;
+    vertical-align: middle;
+
+    >span {
+      display: block;
+
+      display: table-cell;
+      vertical-align: middle;      
+      background-color:$colour_white;
+      color: $colour_red;
+      border: 1px solid $colour_red;
+      font-size:14px;
+      width:204px;
+      height:38px;
+      text-transform: uppercase;
+    }
+
+    >.icon {
+      margin-top:13px;
+      width:64px;
+      height:64px;
+      background-repeat:no-repeat;
+      @include CentringMargins;
+    }
+
+    text-align: center;
+    text-decoration: none;
+
+
+    &:hover,
+    &.current {
+      >span {
+        background-color:$colour_red;
+        color: $colour_white;
+      }
+
+      >.icon {
+        background-position:-64px 0;
+      }
+
+    }    
+    &:active,
+    &:focus {
+      >span {
+        border:none;
+        outline: none;
+      }
+    }  
+
+  } 
+
+  #franchise_submenu {
+    margin-bottom:60px;
+  }
+
+  @include breakpoint(phone) {
+
+    .centreColumn {
+      width:100%;
+    }
+
+    ol,
+    ul {
+      padding-left:20px;
+      // @include SetMargins(0!important);
+      // @include SetPadding(0!important);
+
+
+
+      li {
+        @include SetMargins(0!important);
+        @include SetPadding(0!important);
+      }
+
+    }
+
+  }
+
+}

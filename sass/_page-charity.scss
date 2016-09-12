@@ -1,0 +1,109 @@
+.page-template-page_charity {
+
+  .dividerBanner.about_charity_1 {
+    height:300px;
+  }
+
+  #charities {
+    max-width:940px;
+    width:80%;
+
+    margin-top:100px;
+    margin-bottom:50px;
+
+    @include CentringMargins;
+
+    .container {
+      width:100%;
+    }
+
+    .charity-tile {
+      //margin-bottom:65px;
+      //height:490px;
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+
+      h3 {
+        font-size: 2.0em;
+        margin-bottom: 1.0em;
+      }
+
+      img {
+        width:100%;
+        margin-bottom:10px;
+      }
+
+      p {
+        margin-bottom: 2.0em;
+
+        &.who {
+          font-size:0.85em;
+          line-height: 1.2em;
+          font-style: italic;
+        }
+      }
+    }
+
+    .btn-holder {
+      width:100%;
+      text-align: center;
+    }
+
+  }
+
+
+  /**************************************************
+  * Phone
+  **************************************************/
+  @include breakpoint(phone) {
+    .masthead-content {
+      font-size:40px;
+    }
+  }
+
+  /**************************************************
+  * Phone & Tablet
+  **************************************************/
+  @include breakpoint(phoneAndTablet) {
+    .masthead-content {
+      h2 {
+        font-size:0.5em;
+      }
+    }
+
+  }
+
+  /**************************************************
+  * Tablet
+  **************************************************/
+  @include breakpoint(tablet) {
+    .masthead-content {
+      font-size:50px;
+    }
+  }
+
+  /**************************************************
+  * Mid Tablet (sm breakpoint)
+  **************************************************/
+  @include breakpoint(midTablet) {
+
+  }
+
+  /**************************************************
+  * Tablet & Desktop
+  **************************************************/
+  @include breakpoint(tabletAndDesktop) {
+
+  }
+
+  /**************************************************
+  * Desktop
+  **************************************************/
+  @include breakpoint(desktop) {
+    
+  }
+
+
+
+}
