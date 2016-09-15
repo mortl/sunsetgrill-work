@@ -34,8 +34,11 @@ $args = array(
 			<div class="results row" >
 			
 			<?php
-			
-			
+         //By Martin Benes
+         //counter for the ids        
+			    $id_counter = 0;
+			   //End
+        
 				// The Query
 				$the_query = new WP_Query( $args );
 
@@ -44,20 +47,30 @@ $args = array(
 					echo '<ul>';
 					while ( $the_query->have_posts() ) {
 						$the_query->the_post();
+	  
+            
+            //This increments the counter
+            //everytime the loop runs
+						$id_counter++;
+            
+            //I then print the counter in 2 locations. 
+            //They are below if you see the echo $id_counter statments.
+
 						//echo '<li>' . get_field('city') . '</li>';
 						//echo '<li>' . get_the_title() . '</li>';
 						?>
 							
 								<div class="location-tile col-xs-6 col-md-4">
 									<div class="address-block">
-										<h5><?php echo get_field('city'); ?></h5>
+                    
+										<h5 id="header-<?php echo $id_counter ?>"><?php echo get_field('city'); ?></h5>
 										<h6><?php echo get_field('location'); ?></h6>
 										<hr/>
 										<p class="address"><?php echo get_field('address'); ?></p>
 										<!--<p class="phone"><?php echo get_field('phone'); ?></p>-->
-										<a class="phone" href="tel:<?php echo get_field('phone'); ?>" title="Call <?php echo get_field('address'); ?> location"><?php echo get_field('phone'); ?></a>
+										<a class="phone"  href="tel:<?php echo get_field('phone'); ?>" title="Call <?php echo get_field('address'); ?> location"><?php echo get_field('phone'); ?></a>
 									</div>
-									<p class="hours"><?php echo get_field('hours'); ?></p>			
+									<p class="hours" id="hours-<?php echo $id_counter?>"><?php echo get_field('hours'); ?></p>			
 								</div>
 												
 						

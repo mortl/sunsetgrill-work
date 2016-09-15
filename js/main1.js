@@ -92,7 +92,7 @@ var map = {};
 	
 	$.fn.moduleStoreSearch = function(OPTIONS) {
 
-		get_location_at_start();
+		//get_location_at_start();
 		if (Object(OPTIONS) !== OPTIONS) OPTIONS = {};
 		
 		var EVENT = {

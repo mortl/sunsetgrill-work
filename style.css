@@ -31,6 +31,7 @@
 }
 
 /* This changes the Instagram post text to Purple.*/
+
 .masthead-content-holder .instagram-text {
 color:#8B3FA3 !important;
  
@@ -57,4 +58,21 @@ color:#8B3FA3 !important;
   width:100% !important;
   max-width:1040px !important;
 
+}
+
+
+div[data-lat="43.2555383"] {
+ width: 51% !important;
+}
+
+
+
+h5#header-34 {
+  font-size: 1.9em !important;
+}
+
+
+
+#hours-34{
+	margin-bottom: 30px;
 }
